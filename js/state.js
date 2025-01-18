@@ -6,6 +6,7 @@
  *          type: typeof Config.SheetTypes.GENERAL;
  *          tags: Set<string>;
  *          intersection: boolean;
+ *          pallete: number;
  *      };
  *      all: {
  *          pills: JQuery;
@@ -20,6 +21,7 @@
  *          unselectTag(tag: string): void;
  *          clearSelection(): void;
  *          reloadSelected(): void;
+ *          nextPallete(): void;
  *      }
  * }} GeneralState State type for General page
  * @typedef {GeneralState} State State type
@@ -36,7 +38,7 @@ let State = null;
  */
 function initGeneralState(pills, tags, checkboxes) {
     State = {
-        active: { type: Config.SheetTypes.GENERAL, tags: new Set(), intersection: true },
+        active: { type: Config.SheetTypes.GENERAL, tags: new Set(), intersection: false, pallete: 0 },
         all: { pills, tags },
         inputs: { tags: checkboxes },
         logic: {
@@ -81,6 +83,10 @@ function initGeneralState(pills, tags, checkboxes) {
                     }).find('input').prop('checked', true);
                 }
             },
+            nextPallete: () => {
+                State.active.pallete = (State.active.pallete + 1) % Properties.PALLETE_TYPES.length;
+                Sections.HTML.attr(Properties.PALLETE, Properties.PALLETE_TYPES[State.active.pallete]);
+            }
         },
     };
 }

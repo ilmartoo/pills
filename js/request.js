@@ -18,13 +18,7 @@ async function requestPills(type, query) {
     const response = await fetch(queryURL, {
         method: 'GET',
     });
-    // const response = { text: () => Mocks[type] };    
-
-    debug('[RECIEVED]');
-
     const text = await response.text();
-
-    debug(text);
 
     const data = CSV.parse(text, true);
     return { header: data.header, rows: data.data };

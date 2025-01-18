@@ -35,9 +35,7 @@ function parseGeneralPills(data) {
         return pill;
     });
 
-    debug('[PARSED]');
-
-    return { pills: pills.sort((a,b) => a.title - b.title), tags: [...tags].sort() };
+    return { pills: pills.sort((a, b) => a.title - b.title), tags: [...tags].sort() };
 }
 
 /**
@@ -59,7 +57,7 @@ function createGeneralPill(pill) {
             parent.addClass(Properties.SHOW_DETAILS);
         });
         foldActions.push(fold, unfold);
-    } 
+    }
 
     const parent = $(`<div class="pill general"></div>`);
     if (pill.description) { parent.attr('title', pill.description); }

@@ -9,29 +9,22 @@ async function loadGeneralPage() {
     const [pills, tags] = createGeneralPills(result.pills);
     const menuTags = createTagMenu(result.tags);
 
-    debug(result);
-    debug(pills);
-    debug(tags);
-    debug(menuTags);
-
     Sections.DISPLAY.children().remove();
     Sections.MENU.children().remove();
     Sections.MENU.append(
         $('<li><button class="button main full-width">Fold all</button></li>').on('click', () => State.all.pills.find(`[${Properties.PILL_ACTION}="${Properties.FOLD_ACTION}"]`).trigger('click')),
         $('<li><button class="button main full-width">Unfold all</button></li>').on('click', () => State.all.pills.find(`[${Properties.PILL_ACTION}="${Properties.UNFOLD_ACTION}"]`).trigger('click')),
         '<li class="separator"></li>',
-        $('<li class="tag"><label><input type="checkbox" class="toggle-switch"/> Intersect mode </label></li>').on('change', function() { State.logic.intersectionMode(!!$(this).find('input').prop('checked')) }),
+        $('<li class="tag"><label><input type="checkbox" class="toggle-switch"/> Intersect mode </label></li>').on('change', function () { State.logic.intersectionMode(!!$(this).find('input').prop('checked')) }),
         '<li class="separator"></li>',
         $('<li><button class="button secondary full-width">Clear selection</button></li>').on('click', () => State.logic.clearSelection()),
         menuTags,
     );
     Sections.DISPLAY.append(pills);
-    
+
     calculateGridElements();
     initGeneralState(pills, tags, menuTags);
 }
-
-// ----------------------------------------------------------------------------------------------
 
 /**
  * Inserts a personal link.
@@ -46,7 +39,7 @@ function insertPersonalLink(link, title, icon) {
 /**
  * Inserts all the needed personal links.
  */
-function insertPersonalLinks() {
+function insertAllPersonalLinks() {
     insertPersonalLink('https://github.com/ilmartoo', 'GitHub', Icons.GITHUB);
     insertPersonalLink('https://www.linkedin.com/in/martin-sz', 'LinkedIn', Icons.LINKEDIN);
 }
@@ -59,10 +52,15 @@ function calculateGridElements() {
     Sections.DISPLAY.css(Properties.GRID_COLUMNS, gridColumns);
 }
 
+function initPallleteChangeLogic() {
+    Sections.LOGO.on("click", () => State.logic.nextPallete());
+}
+
 // ----------------------------------------------------------------------------------------------
 
 $(() => {
-    insertPersonalLinks();
+    insertAllPersonalLinks();
+    initPallleteChangeLogic();
     loadGeneralPage();
 });
 

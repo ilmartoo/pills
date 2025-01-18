@@ -16,7 +16,11 @@ const Config = {
 /** Sections of the page. */
 const Sections = {
     /** Navigation bar. */
+    HTML: $("html"),
+    /** Navigation bar. */
     NAVBAR: $('#navbar'),
+    /** Logo. */
+    LOGO: $('#logo'),
     /** Page options. */
     MENU: $('#menu'),
     /** Page elements. */
@@ -41,6 +45,10 @@ const Properties = {
     FOLD_ACTION: 'fold',
     /** Unfold action attribute value */
     UNFOLD_ACTION: 'unfold',
+    /** Pallete attribute */
+    PALLETE: "pallete",
+    /** Pallete types */
+    PALLETE_TYPES: ["red", "yellow", "blue-yellow"],
 }
 
 /**
