@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "basecoat-css";
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+}

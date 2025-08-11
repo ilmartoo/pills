@@ -1,67 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>All My Pills</title>
-    <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme:light),(prefers-color-scheme:no-preference)"
-        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiBmaWxsPSIjMzMzIj4NCiAgICA8cGF0aA0KICAgICAgICBkPSJNMjIwLTE1MHYtNTk3LjY5UTIyMC03NzggMjQxLTc5OXEyMS0yMSA1MS4zMS0yMWgzNzUuMzhRNjk4LTgyMCA3MTktNzk5cTIxIDIxIDIxIDUxLjMxVi0xNTBMNDgwLTI2MS41NCAyMjAtMTUwWm02MC05MiAyMDAtODYgMjAwIDg2di01MDUuNjlxMC00LjYyLTMuODUtOC40Ni0zLjg0LTMuODUtOC40Ni0zLjg1SDI5Mi4zMXEtNC42MiAwLTguNDYgMy44NS0zLjg1IDMuODQtMy44NSA4LjQ2Vi0yNDJabTAtNTE4aDQwMC00MDBaIiAvPg0KPC9zdmc+">
-    <link rel="icon" type="image/svg+xml" media="(prefers-color-scheme:dark)"
-        href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTk2MCA5NjAgOTYwIiBmaWxsPSIjZWVlIj4NCiAgICA8cGF0aA0KICAgICAgICBkPSJNMjIwLTE1MHYtNTk3LjY5UTIyMC03NzggMjQxLTc5OXEyMS0yMSA1MS4zMS0yMWgzNzUuMzhRNjk4LTgyMCA3MTktNzk5cTIxIDIxIDIxIDUxLjMxVi0xNTBMNDgwLTI2MS41NCAyMjAtMTUwWm02MC05MiAyMDAtODYgMjAwIDg2di01MDUuNjlxMC00LjYyLTMuODUtOC40Ni0zLjg0LTMuODUtOC40Ni0zLjg1SDI5Mi4zMXEtNC42MiAwLTguNDYgMy44NS0zLjg1IDMuODQtMy44NSA4LjQ2Vi0yNDJabTAtNTE4aDQwMC00MDBaIiAvPg0KPC9zdmc+">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="assets/pill-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Pills</title>
+
+    <!-- Google Fonts - Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/palletes.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"> -->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script> -->
-    <script type="text/javascript" src="lib/jquery-3.7.1.min.js" defer></script>
-    <script type="text/javascript" src="js/csv.js" defer></script>
-    <script type="text/javascript" src="js/config.js" defer></script>
-    <script type="text/javascript" src="js/state.js" defer></script>
-    <script type="text/javascript" src="js/mock.js" defer></script>
-    <script type="text/javascript" src="js/icons.js" defer></script>
-    <script type="text/javascript" src="js/tags.js" defer></script>
-    <script type="text/javascript" src="js/pills.js" defer></script>
-    <script type="text/javascript" src="js/request.js" defer></script>
-    <script type="text/javascript" src="js/navbar.js" defer></script>
-    <script type="text/javascript" src="js/logic.js" defer></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+
+    <link href="./index.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="logo" class="title">
-            Ilmartoo's pills
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor">
-                <path
-                    d="M220-150v-597.69Q220-778 241-799q21-21 51.31-21h375.38Q698-820 719-799q21 21 21 51.31V-150L480-261.54 220-150Zm60-92 200-86 200 86v-505.69q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H292.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46V-242Zm0-518h400-400Z" />
-            </svg>
-        </div>
-    </nav>
-    <menu id="menu"></menu>
-    <main>
-        <section id="display"></section>
-        <footer id="footer">
-            <div class="note">
-                HTTP requests are forbidden from <code>file:///</code> domains.
-                As a workaround, a browser extension to bypass CORS is needed.
-            </div>
-            <div class="link-column">
-                <h3 class="title">Socials</h3>
-                <ul id="personal-links" class="list"></ul>
-            </div>
-            <div class="link-column">
-                <h3 class="title">Related resources</h3>
-                <ul class="list">
-                    <li><a href="https://developers.google.com/chart/interactive/docs/querylanguage">
-                            Query Language
-                        </a></li>
-                    <li><a href="https://github.com/barreeeiroo/USC-Horarios-ETSE/tree/main/horarios/src">
-                            Barreeirooo's project
-                        </a></li>
-                </ul>
-            </div>
-        </footer>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 </body>
 
 </html>
