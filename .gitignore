@@ -3,3 +3,7 @@ node_modules/
 
 # IDE
 .vscode/
+
+# Build
+dist/
+build/
