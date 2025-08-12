@@ -1,5 +1,5 @@
+import { routes } from '@logic/routes';
 import { Navigate, Route, Routes } from 'react-router';
-import { routes } from '../logic/routes';
 
 export function App() {
   return (

@@ -1,5 +1,6 @@
+import type { Tag, UtilityPill } from '@logic/models';
+import { cn } from '@logic/utils';
 import { Link, Star } from 'lucide-react';
-import type { Tag, UtilityPill } from '../../logic/models';
 
 export function UtilitiesPillsList(props: {
   pills: UtilityPill[];
@@ -13,7 +14,10 @@ export function UtilitiesPillsList(props: {
 
     return (
       <div
-        className={`card h-80 justify-start ${favorite ? 'border-accent-foreground border' : ''}`}
+        className={cn(
+          'card max-h-100 justify-start',
+          favorite && 'border-accent-foreground border'
+        )}
         key={pill.id}
       >
         <header>
@@ -28,7 +32,10 @@ export function UtilitiesPillsList(props: {
                 data-align='center'
               >
                 <Star
-                  className={`size-5 transition-colors duration-250 ${favorite ? 'fill-current' : ''}`}
+                  className={cn(
+                    'size-5 transition-colors duration-250',
+                    favorite && 'fill-current'
+                  )}
                 />
               </button>
             </div>
@@ -40,15 +47,17 @@ export function UtilitiesPillsList(props: {
           </div>
         </header>
 
-        <section className='overflow-y-auto'>
-          {pill.description && <p>{pill.description}</p>}
-        </section>
+        {pill.description && (
+          <section className='overflow-y-auto'>
+            <p>{pill.description}</p>
+          </section>
+        )}
 
         <footer className='flex flex-wrap gap-2 mt-auto'>
           {pill.tags.sort().map((t) => (
             <a
               key={t}
-              className={props.activeTags.includes(t) ? 'btn-sm-primary' : 'btn-sm-secondary'}
+              className={cn(props.activeTags.includes(t) ? 'btn-sm-primary' : 'btn-sm-outline')}
               onClick={() => props.onTagClick(t)}
             >
               {t}

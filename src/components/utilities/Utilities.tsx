@@ -1,12 +1,12 @@
+import { Layout } from '@components/Layout';
+import { PillsHolder } from '@components/pills/PillsHolder';
+import { UtilitiesFilterMenu } from '@components/utilities/UtilitiesFilterMenu';
+import { UtilitiesPillsList } from '@components/utilities/UtiltitiesPillsList';
+import { requestUtilityPills } from '@logic/data';
+import { PillOrdering, type Tag, type UtilitiesFilter, type UtilityPill } from '@logic/models';
+import { getStoreUtilitiesFilter, updateStoreUtilitiesFilter } from '@logic/store';
+import { pluralize, toggleItem } from '@logic/utils';
 import { useEffect, useState } from 'react';
-import { requestPills } from '../../logic/data';
-import { PillOrdering, type Tag, type UtilitiesFilter, type UtilityPill } from '../../logic/models';
-import { getStoreUtilitiesFilter, updateStoreUtilitiesFilter } from '../../logic/store';
-import { pluralize, toggleItem } from '../../logic/utils';
-import { Layout } from '../Layout';
-import { PillsHolder } from '../PillsHolder';
-import { UtilitiesFilterMenu } from './UtilitiesFilterMenu';
-import { UtilitiesPillsList } from './UtiltitiesPillsList';
 
 export function Utilities() {
   const [data, setData] = useState<{ pills: UtilityPill[]; tags: Tag[] }>({
@@ -16,7 +16,7 @@ export function Utilities() {
   const [filter, setFilter] = useState<UtilitiesFilter>(getStoreUtilitiesFilter());
 
   useEffect(() => {
-    requestPills('utility')
+    requestUtilityPills()
       .then((r) => ({ pills: r.pills, tags: [...r.tags].sort() }))
       .then(setData);
   }, []);
@@ -131,7 +131,7 @@ export function Utilities() {
         sidebar={<UtilitiesFilterMenu filter={filter} tags={data.tags} onChange={setFilter} />}
       >
         <div className='space-y-2'>
-          <div className='flex gap-2'>
+          <div className='flex flex-wrap gap-2'>
             <span className='badge-secondary'>
               {pills.shown} {pluralize('pill', 'pills', pills.shown)} on display
             </span>
@@ -177,8 +177,8 @@ export function Utilities() {
       >
         <div className='space-y-2'>
           <div className='flex gap-2'>
-            <div className='bg-accent animate-pulse w-31 h-5.5 rounded-md' />
-            <div className='bg-accent animate-pulse w-31 h-5.5 rounded-md' />
+            <div className='bg-accent animate-pulse w-30 h-5.5 rounded-md' />
+            <div className='bg-accent animate-pulse w-30 h-5.5 rounded-md' />
           </div>
           <PillsHolder>
             <div className='bg-accent animate-pulse h-80 rounded-lg' />

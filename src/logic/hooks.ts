@@ -1,9 +1,7 @@
+import { getStore, updateStoreTheme } from '@logic/store';
 import { useEffect, useState } from 'react';
-import { getStore, updateStoreTheme } from './store';
 
-export function usePropState<T>(
-  value: T
-): [T, React.Dispatch<React.SetStateAction<T>>] {
+export function usePropState<T>(value: T): [T, React.Dispatch<React.SetStateAction<T>>] {
   const [state, setState] = useState(value);
   useEffect(() => setState(value), [value]);
   return [state, setState];
@@ -12,8 +10,11 @@ export function usePropState<T>(
 export function useTheme() {
   const [isDarkTheme, setDarkTheme] = useState(getStore().dark);
   useEffect(() => {
-    if (isDarkTheme) { document.documentElement.classList.add('dark'); }
-    else { document.documentElement.classList.remove('dark'); }
+    if (isDarkTheme) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
     updateStoreTheme(isDarkTheme);
   }, [isDarkTheme]);
 
