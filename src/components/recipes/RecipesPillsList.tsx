@@ -20,21 +20,21 @@ export function RecipesPillsList(props: {
         key={pill.id}
       >
         <header>
-          <div className='space-y-1.5'>
-            <div className='flex justify-between items-center gap-4'>
+          <div className="space-y-1.5">
+            <div className="flex justify-between items-center gap-4">
               <div>
-                <h1 className='font-semibold'>{pill.title}</h1>
+                <h1 className="font-semibold">{pill.title}</h1>
                 <p>
                   {pill.servings.min}
                   {pill.servings.min < pill.servings.max && ` to ${pill.servings.max}`} servings
                 </p>
               </div>
               <button
-                className='btn-icon-ghost self-start'
+                className="btn-icon-ghost self-start"
                 onClick={() => props.onFavoriteClick(pill.id)}
-                data-tooltip='Toggle favorite'
-                data-side='top'
-                data-align='center'
+                data-tooltip="Toggle favorite"
+                data-side="top"
+                data-align="center"
               >
                 <Star
                   className={cn(
@@ -44,8 +44,8 @@ export function RecipesPillsList(props: {
                 />
               </button>
             </div>
-            <p className='flex gap-2'>
-              <a className='badge-outline mr-auto' href={pill.link} target='_blank'>
+            <p className="flex gap-2">
+              <a className="badge-outline mr-auto" href={pill.link} target="_blank">
                 <ChefHat /> Make this recipe
               </a>
               {pill.country && (
@@ -64,18 +64,18 @@ export function RecipesPillsList(props: {
         </header>
 
         {pill.img && (
-          <section className='w-full flex flex-col space-y-2'>
+          <section className="w-full flex flex-col space-y-2">
             <img
               src={pill.img}
-              className='max-h-60 self-center h-fit object-scale-down rounded-md'
+              className="max-h-60 self-center h-fit object-scale-down rounded-md"
             />
-            <p className='text-xs font-'>
+            <p className="text-xs font-">
               <b>Ingredients:</b> {pill.ingredients.sort().join(', ')}.
             </p>
           </section>
         )}
 
-        <footer className='mt-auto flex flex-wrap gap-2'>
+        <footer className="mt-auto flex flex-wrap gap-2">
           {pill.tags.sort().map((t) => (
             <a
               key={t}

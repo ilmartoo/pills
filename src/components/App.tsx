@@ -5,7 +5,7 @@ export function App() {
   return (
     <>
       <Routes>
-        <Route path='/'>
+        <Route path="/">
           <Route index element={<Navigate to={routes.utilities.path} replace />} />
           <Route {...routes.utilities} />
           <Route {...routes.recipes} />

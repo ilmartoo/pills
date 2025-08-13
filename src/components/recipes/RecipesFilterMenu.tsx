@@ -71,31 +71,31 @@ export function RecipesFilterMenu(props: {
   })();
 
   return (
-    <div className='space-y-2 h-full flex flex-col'>
-      <div className='flex gap-2'>
+    <div className="space-y-2 h-full flex flex-col">
+      <div className="flex gap-2">
         <input
-          placeholder='Search recipes'
-          type='search'
-          className='input'
+          placeholder="Search recipes"
+          type="search"
+          className="input"
           value={props.filter.pills.search}
           onChange={(e) => updateRecipeSearch(e.target.value)}
         />
 
         <button
-          className='btn-sm-icon-outline size-9'
+          className="btn-sm-icon-outline size-9"
           onClick={updateRecipeOrder}
-          data-tooltip='Change recipe ordering'
-          data-side='bottom'
-          data-align='end'
+          data-tooltip="Change recipe ordering"
+          data-side="bottom"
+          data-align="end"
         >
           {pillSortIcon}
         </button>
       </div>
 
       <input
-        placeholder='Number of servings'
-        type='number'
-        className='input'
+        placeholder="Number of servings"
+        type="number"
+        className="input"
         value={props.filter.servings || ''}
         min={1}
         onChange={(e) => updateServings(e.target.value ? +e.target.value : null)}

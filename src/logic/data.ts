@@ -119,6 +119,5 @@ function parseRecipePills(data: string): RecipePillsData {
     pills.push(pill);
   }
 
-  console.log(pills);
   return (storage.recipes = { pills, tags, countries });
 }

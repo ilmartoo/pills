@@ -21,15 +21,15 @@ export function UtilitiesPillsList(props: {
         key={pill.id}
       >
         <header>
-          <div className='space-y-1.5'>
-            <div className='flex justify-between items-center gap-4'>
-              <h1 className='font-semibold'>{pill.title}</h1>
+          <div className="space-y-1.5">
+            <div className="flex justify-between items-center gap-4">
+              <h1 className="font-semibold">{pill.title}</h1>
               <button
-                className='btn-icon-ghost self-start'
+                className="btn-icon-ghost self-start"
                 onClick={() => props.onFavoriteClick(pill.id)}
-                data-tooltip='Toggle favorite'
-                data-side='top'
-                data-align='center'
+                data-tooltip="Toggle favorite"
+                data-side="top"
+                data-align="center"
               >
                 <Star
                   className={cn(
@@ -40,7 +40,7 @@ export function UtilitiesPillsList(props: {
               </button>
             </div>
             <p>
-              <a className='badge-outline' href={pill.link} target='_blank'>
+              <a className="badge-outline" href={pill.link} target="_blank">
                 <Link /> Take this pill
               </a>
             </p>
@@ -48,12 +48,12 @@ export function UtilitiesPillsList(props: {
         </header>
 
         {pill.description && (
-          <section className='overflow-y-auto'>
+          <section className="overflow-y-auto">
             <p>{pill.description}</p>
           </section>
         )}
 
-        <footer className='flex flex-wrap gap-2 mt-auto'>
+        <footer className="flex flex-wrap gap-2 mt-auto">
           {pill.tags.sort().map((t) => (
             <a
               key={t}

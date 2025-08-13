@@ -48,22 +48,22 @@ export function UtilitiesFilterMenu(props: {
   })();
 
   return (
-    <div className='space-y-2 h-full flex flex-col'>
-      <div className='flex gap-2'>
+    <div className="space-y-2 h-full flex flex-col">
+      <div className="flex gap-2">
         <input
-          placeholder='Search pills'
-          type='search'
-          className='input'
+          placeholder="Search pills"
+          type="search"
+          className="input"
           value={props.filter.pills.search}
           onChange={(e) => updatePillSearch(e.target.value)}
         />
 
         <button
-          className='btn-sm-icon-outline size-9'
+          className="btn-sm-icon-outline size-9"
           onClick={updatePillOrder}
-          data-tooltip='Change pill ordering'
-          data-side='bottom'
-          data-align='end'
+          data-tooltip="Change pill ordering"
+          data-side="bottom"
+          data-align="end"
         >
           {pillSortIcon}
         </button>

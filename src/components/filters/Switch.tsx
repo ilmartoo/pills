@@ -10,9 +10,9 @@ export function Switch(props: {
   return (
     <label className={cn('label gap-2', props.className)}>
       <input
-        type='checkbox'
-        role='switch'
-        className='input'
+        type="checkbox"
+        role="switch"
+        className="input"
         checked={props.checked}
         onChange={() => props.onChange(!props.checked)}
       />

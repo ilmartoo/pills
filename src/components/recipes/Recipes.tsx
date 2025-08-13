@@ -170,19 +170,19 @@ export function Recipes() {
           />
         }
       >
-        <div className='space-y-2'>
-          <div className='flex flex-wrap gap-2'>
-            <span className='badge-secondary'>
+        <div className="space-y-2">
+          <div className="flex flex-wrap gap-2">
+            <span className="badge-secondary">
               {pills.shown} {pluralize('recipe', 'recipes', pills.shown)} on display
             </span>
 
             {pills.hidden > 0 && (
-              <span className='badge-primary'>
+              <span className="badge-primary">
                 {pills.hidden} {pluralize('recipe', 'recipes', pills.hidden)} excluded
               </span>
             )}
 
-            <span className='badge-secondary'>{pills.sort}</span>
+            <span className="badge-secondary">{pills.sort}</span>
           </div>
           <PillsHolder>
             <RecipesPillsList
@@ -202,37 +202,37 @@ export function Recipes() {
     return (
       <Layout
         sidebar={
-          <div className='space-y-2'>
-            <div className='bg-accent animate-pulse h-9 rounded-md' />
-            <div className='bg-accent animate-pulse h-9 rounded-md' />
+          <div className="space-y-2">
+            <div className="bg-accent animate-pulse h-9 rounded-md" />
+            <div className="bg-accent animate-pulse h-9 rounded-md" />
 
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
-            <div className='bg-accent animate-pulse h-4.5 w-2/3 rounded-md' />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
+            <div className="bg-accent animate-pulse h-4.5 w-2/3 rounded-md" />
           </div>
         }
       >
-        <div className='space-y-2'>
-          <div className='flex gap-2'>
-            <div className='bg-accent animate-pulse w-30 h-5.5 rounded-md' />
-            <div className='bg-accent animate-pulse w-30 h-5.5 rounded-md' />
+        <div className="space-y-2">
+          <div className="flex gap-2">
+            <div className="bg-accent animate-pulse w-30 h-5.5 rounded-md" />
+            <div className="bg-accent animate-pulse w-30 h-5.5 rounded-md" />
           </div>
           <PillsHolder>
-            <div className='bg-accent animate-pulse h-80 rounded-lg' />
-            <div className='bg-accent animate-pulse h-80 rounded-lg' />
+            <div className="bg-accent animate-pulse h-80 rounded-lg" />
+            <div className="bg-accent animate-pulse h-80 rounded-lg" />
 
-            <div className='bg-accent animate-pulse h-80 rounded-lg max-lg:hidden' />
+            <div className="bg-accent animate-pulse h-80 rounded-lg max-lg:hidden" />
 
-            <div className='bg-accent animate-pulse h-80 rounded-lg max-xl:hidden' />
-            <div className='bg-accent animate-pulse h-80 rounded-lg max-xl:hidden' />
+            <div className="bg-accent animate-pulse h-80 rounded-lg max-xl:hidden" />
+            <div className="bg-accent animate-pulse h-80 rounded-lg max-xl:hidden" />
 
-            <div className='bg-accent animate-pulse h-80 rounded-lg max-2xl:hidden' />
-            <div className='bg-accent animate-pulse h-80 rounded-lg max-2xl:hidden' />
+            <div className="bg-accent animate-pulse h-80 rounded-lg max-2xl:hidden" />
+            <div className="bg-accent animate-pulse h-80 rounded-lg max-2xl:hidden" />
           </PillsHolder>
         </div>
       </Layout>
